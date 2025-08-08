@@ -1,0 +1,13 @@
+/* Fonts */
+@font-face {
+  font-family: "CallingCode";
+  src: url(/Font/CallingCode-Regular.ttf);
+}
+
+body {
+  font-family: "CallingCode" Arial, Helvetica, sans-serif;
+}
+.logo{
+    height: 60px;
+    
+}
