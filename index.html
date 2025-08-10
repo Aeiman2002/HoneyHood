@@ -19,38 +19,171 @@
 
 <body>
     <!-- Navbar Start -->
-    <nav class="bg-white shadow dark:bg-yellow-200">
-        <div
-            class="container mx-auto flex items-center justify-between p-6 text-[#386641] capitalize dark:text-gray-300">
-            <div class="flex items-center">
-                <img src="/Images/logo.png" alt="HoneyHood Logo" class="logo">
+    <nav class="bg-white shadow dark:bg-[#FFF4A4]">
+        <div class="container mx-auto flex items-center justify-between p-6 text-[#386641] capitalize">
+            <!-- Logo -->
+            <div class="flex items-center order-1">
+                <img src="/Images/logo.png" alt="HoneyHood Logo" class="h-10">
             </div>
-            <div class="flex space-x-6">
+            <!-- Menu Links - Desktop -->
+            <div class="hidden md:flex space-x-6 order-3 md:order-2">
                 <a href="/index.html"
-                    class="text-[#386641] transition-colors duration-300 transform dark:text-[#386641] border-b-2 border-gray-600">
-                    Home</a>
+                    class="border-b-2 border-gray-600 md:border-transparent hover:border-gray-600 transition-colors duration-300">Home</a>
                 <a href="/about.html"
-                    class="border-b-2 border-transparent text-[#386641] hover:text-[#386641] dark:hover:text-[#386641] hover:border-gray-600 transition-colors duration-300">
-                    About</a>
+                    class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">About</a>
                 <a href="/services.html"
-                    class="border-b-2 border-transparent text-[#386641] hover:text-[#386641] dark:hover:text-[#386641] hover:border-gray-600 transition-colors duration-300">
-                    Services</a>
+                    class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Services</a>
                 <a href="/projects.html"
-                    class="border-b-2 border-transparent text-[#386641] hover:text-[#386641] dark:hover:text-[#386641] hover:border-gray-600 transition-colors duration-300">
-                    Projects</a>
+                    class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Projects</a>
                 <a href="contact.html"
-                    class="border-b-2 border-transparent text-[#386641] hover:text-[#386641] dark:hover:text-[#386641] hover:border-gray-600 transition-colors duration-300">
-                    Contact</a>
+                    class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Contact</a>
             </div>
-            <div class="flex items-center space-x-6">
-                <div id="toggleTheme"><i class="fa-solid fa-moon" style="color: #386641;"></i></div>
+            <div class="flex items-center space-x-4 order-2 md:order-3">
+                <!-- Theme Toggle -->
+                <div id="toggleTheme" class="block">
+                    <i class="fa-solid fa-moon text-[#386641] text-xl cursor-pointer"></i>
+                </div>
+                <!-- Hamburger Button -->
+                <button id="menu-btn" class="md:hidden text-[#386641] focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Menu Links - Mobile -->
+            <div id="mobile-menu"
+                class="hidden md:hidden absolute top-16 left-0 w-full bg-white shadow-md p-6 z-50 text-center">
+                <div class="flex flex-col space-y-4">
+                    <a href="/index.html"
+                        class="border-b-2 border-gray-600 hover:border-gray-600 transition-colors duration-300">Home</a>
+                    <a href="/about.html"
+                        class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">About</a>
+                    <a href="/services.html"
+                        class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Services</a>
+                    <a href="/projects.html"
+                        class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Projects</a>
+                    <a href="contact.html"
+                        class="border-b-2 border-transparent hover:border-gray-600 transition-colors duration-300">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
-
+    <!-- Slider Start -->
+    <div class="relative w-full overflow-hidden p-3">
+        <div class="relative w-full overflow-hidden rounded-lg shadow-lg">
+            <!-- Slides -->
+            <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Slide 1 -->
+                <div class="w-full flex-shrink-0 relative">
+                    <img src="/Images/natural-honey.png" class="w-full h-96 object-cover" alt="Bee Hive">
+                    <div class="absolute bottom-6 left-6 bg-[#386641] text-[#FFF4A4] p-4 rounded w-100">
+                        <h2 class="text-2xl font-bold">Natural Honey</h2>
+                        <p>Pure and fresh from local hives.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="w-full flex-shrink-0 relative">
+                    <img src="/Images/beekeeping.jpg" class="w-full h-96 object-cover" alt="Beekeeper">
+                    <div class="absolute bottom-6 left-6 bg-[#386641] text-[#FFF4A4] p-4 rounded w-100">
+                        <h2 class="text-2xl font-bold">Beekeeping Experts</h2>
+                        <p>Dedicated to sustainable urban beekeeping.</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="w-full flex-shrink-0 relative">
+                    <img src="/Images/honey-jar.jpg" class="w-full h-96 object-cover" alt="Honey Jar">
+                    <div class="absolute bottom-6 left-6 bg-[#386641] text-[#FFF4A4] p-4 rounded w-100">
+                        <h2 class="text-2xl font-bold">Fresh Honey Jars</h2>
+                        <p>Delicious honey straight from the hive.</p>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="w-full flex-shrink-0 relative">
+                    <img src="/Images/pollination-power.jpg" class="w-full h-96 object-cover" alt="Bee Pollination">
+                    <div class="absolute bottom-6 left-6 bg-[#386641] text-[#FFF4A4] p-4 rounded w-100">
+                        <h2 class="text-2xl font-bold">Pollination Power</h2>
+                        <p>Supporting plants and the environment.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Arrows -->
+            <button id="prev"
+                class="absolute top-1/2 left-4 -translate-y-1/2 bg-[#386641] bg-opacity-50 text-white px-4 py-2 rounded-full">❮</button>
+            <button id="next"
+                class="absolute top-1/2 right-4 -translate-y-1/2 bg-[#386641] bg-opacity-50 text-white px-4 py-2 rounded-full">❯</button>
+        </div>
+    </div>
+    <!-- Slider End -->
+    <!-- Cards Section Start -->
+    <div class="text-center pt-5">
+        <h1 class="text-4xl font-bold text-[#386641]">HoneyHood</h1>
+        <h5 class="text-lg mb-3 italic">Sustainable Buzz for a Sweetner Future</h5>
+    </div>
+    <h1 class="text-2xl lg:ms-5 lg:ps-3 ">Bees We Used</h1>
+    <div class="grid lg:grid-cols-3 sm:grid-cols-1 pt-5 gap-5 pb-[50px]">
+        <div>
+            <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+                <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
+                    style="background-image: url(/Images/western-honeybee.png)">
+                </div>
+                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-[#386641]">
+                    <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Western
+                        Honey Bee
+                    </h3>
+                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-[#649649]">
+                        <span class="font-bold text-gray-800 dark:text-gray-200">Scientific name:</span>
+                        <p> Apis mellifera</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+                <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
+                    style="background-image: url(/Images/indian-honeybee.png)">
+                </div>
+                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-[#386641]">
+                    <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Indian
+                        Honey Bee
+                    </h3>
+                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-[#649649]">
+                        <span class="font-bold text-gray-800 dark:text-gray-200">Scientific name:</span>
+                        <p>Apis cerana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+                <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
+                    style="background-image: url(/Images/giant-honeybee.png)">
+                </div>
+                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-[#386641]">
+                    <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">Giant
+                        Honey Bee
+                    </h3>
+                    <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-[#649649]">
+                        <span class="font-bold text-gray-800 dark:text-gray-200">Scientific name:</span>
+                        <p> Apis dorsata</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cards Section End -->
+    <!-- Mini About Section Start -->
+    <div class="bg-[#FFF4A4] w-full text-center p-4">
+        <h1 class="text-4xl">About Us</h1>
+        <div class="max-w-[30%] mx-auto mt-5">
+            <p>Discover pure, eco-friendly honey crafted with care from our sustainable hives.
+                Join us in creating a sweeter, greener future—one jar at a time.</p>
+        </div>
+        <div class="mt-5">
+            <button type="button" class="cursor-pointer bg-[#439353] w-50 text-xl text-white">See More</button>
+        </div>
+    </div>
+    <!-- Mini About Section End -->
     <!-- Footer Start -->
-    <footer class="bg-white dark:bg-yellow-200">
+    <footer class="bg-white dark:bg-[#FFF4A4]">
         <div class="container px-6 py-8 mx-auto">
             <div class="flex flex-col items-center text-center">
                 <a href="#">
@@ -76,7 +209,9 @@
             </div>
             <hr class="my-6 border-gray-200 md:my-10 dark:border-[#386641]" />
             <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-                <p class="text-sm text-[#386641] hover:text-[#386641] dark:hover:text-[#386641]">© Copyright 2025. All Rights Reserved | HoneyHood</p>
+                <p class="text-sm text-[#386641] hover:text-[#386641] dark:hover:text-[#386641]">© Copyright 2025.
+                    All
+                    Rights Reserved | HoneyHood</p>
             </div>
         </div>
     </footer>
