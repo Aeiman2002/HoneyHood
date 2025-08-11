@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -120,7 +122,8 @@
     </div>
     <h1 class="text-2xl lg:ms-5 lg:ps-3 ">Bees We Used</h1>
     <div class="grid lg:grid-cols-3 sm:grid-cols-1 pt-5 gap-5 pb-[50px]">
-        <div>
+        <!-- Card 1 -->
+        <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
             <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                 <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
                     style="background-image: url(/Images/western-honeybee.png)">
@@ -136,7 +139,8 @@
                 </div>
             </div>
         </div>
-        <div>
+        <!-- Card 2 -->
+        <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
             <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                 <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
                     style="background-image: url(/Images/indian-honeybee.png)">
@@ -152,7 +156,8 @@
                 </div>
             </div>
         </div>
-        <div>
+        <!-- Card 3 -->
+        <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
             <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                 <div class="w-full h-64 bg-[#FFF4A4] bg-center bg-cover rounded-lg shadow-md"
                     style="background-image: url(/Images/giant-honeybee.png)">
@@ -171,16 +176,32 @@
     </div>
     <!-- Cards Section End -->
     <!-- Mini About Section Start -->
-    <div class="bg-[#FFF4A4] w-full text-center p-4">
-        <h1 class="text-4xl">About Us</h1>
-        <div class="max-w-[30%] mx-auto mt-5">
-            <p>Discover pure, eco-friendly honey crafted with care from our sustainable hives.
-                Join us in creating a sweeter, greener future—one jar at a time.</p>
-        </div>
-        <div class="mt-5">
-            <button type="button" class="cursor-pointer bg-[#439353] w-50 text-xl text-white">See More</button>
-        </div>
+    <div data-aos="fade-right">
+        <section class="relative h-[500px] lg:h-[600px]">
+            <!-- Background image layer -->
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-center bg-cover"
+                    style="background-image: url('/Images/aboutus-bg.png'); filter: brightness(0.4);">
+                </div>
+            </div>
+
+            <!-- Content layer -->
+            <div class="relative z-10 h-full flex items-center pl-6 lg:pl-[150px]">
+                <div class="max-w-lg">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-[#fff4a4]">About Us</h1>
+                    <p class="mt-4 text-[#fff4a4] text-lg lg:text-xl font-semibold leading-relaxed">
+                        Discover pure, eco-friendly honey crafted with care from our sustainable hives.
+                        Join us in creating a sweeter, greener future—one jar at a time.
+                    </p>
+                    <button type="button"
+                        class="mt-6 cursor-pointer inline-block bg-[#439353] hover:bg-[#3b7c47] text-[#fff4a4] font-medium px-6 py-2 rounded">
+                        See More
+                    </button>
+                </div>
+            </div>
+        </section>
     </div>
+
     <!-- Mini About Section End -->
     <!-- Footer Start -->
     <footer class="bg-white dark:bg-[#FFF4A4]">
@@ -223,6 +244,9 @@
     <script src="app.js"></script>
     <!-- Animations AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
