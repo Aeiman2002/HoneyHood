@@ -9,5 +9,12 @@ body {
 }
 .logo{
     height: 60px;
-    
+
+}
+
+@media screen and (max-width : 768) {
+  .beeImg img{
+    height: 100px !important; 
+    width: 300px !important;
+  }
 }
