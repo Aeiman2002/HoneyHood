@@ -3,9 +3,16 @@
   font-family: "CallingCode";
   src: url(/Font/CallingCode-Regular.ttf);
 }
-
+@font-face {
+  font-family: "Liber";
+  src: url(/Font/LibertinusSans-Regular.ttf);
+}
+body p{
+  font: "CallingCode", Arial, Helvetica, sans-serif ;
+  font-size: 18px;
+}
 body {
-  font-family: "CallingCode" Arial, Helvetica, sans-serif;
+  font-family: "Liber", Arial, Helvetica, sans-serif;
 }
 .logo {
   height: 60px;
