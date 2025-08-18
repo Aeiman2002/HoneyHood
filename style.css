@@ -7,8 +7,8 @@
   font-family: "Liber";
   src: url(/Font/LibertinusSans-Regular.ttf);
 }
-body p{
-  font: "CallingCode", Arial, Helvetica, sans-serif ;
+body p {
+  font: "CallingCode", Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 body {
@@ -114,6 +114,7 @@ body {
 .custom-cancel-button:hover {
   background-color: #e6e0a0 !important;
 }
+
 @media screen and (max-width: 768) {
   .beeImg img {
     height: 100px !important;

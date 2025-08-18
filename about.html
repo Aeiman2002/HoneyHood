@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="style.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'honey-yellow': '#fff4a4',
+                        'honey-green': '#5a7247',
+                    }
+                }
+            },
+            variants: {
+                extend: {
+                    backgroundColor: ['hover', 'group-hover'],
+                    textColor: ['hover', 'group-hover'],
+                    display: ['group-hover']
+                }
+            }
+        }
+    </script>
     <!-- Animations AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -21,128 +41,138 @@
 <body>
     <!-- Navbar Start -->
     <nav class="bg-honey-yellow text-honey-green p-5 shadow-md rounded-b-xl fixed top-0 left-0 w-full z-50">
-        <div class="container mx-auto flex justify-between items-center relative my-[20px]">
-            <!-- Logo - Left Side -->
-            <img src="/Images/logo.png" alt="HoneyHood Logo" class="h-10">
-            <!-- Main Navigation for Larger Screens - Centered -->
-            <div class="hidden sm:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+        <div class="container mx-auto flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a href="/index.html" class="flex items-center">
+                <img src="/Images/logo.png" alt="HoneyHood Logo" class="lg:h-12 h-10">
+            </a>
+            <!-- Desktop Navigation - Centered -->
+            <div class="hidden sm:flex gap-5">
+                <!-- Home -->
                 <a href="/index.html" class="group relative flex flex-col items-center">
                     <div
-                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green group-hover:text-honey-yellow transition-colors">
-                        <i class="fas fa-home"></i>
+                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green transition-smooth">
+                        <i class="fas fa-home text-lg group-hover:text-honey-yellow"></i>
                     </div>
                     <span
-                        class="absolute top-full mt-2 hidden group-hover:block bg-honey-green text-[#fff4a4] text-xs px-2 py-1 rounded whitespace-nowrap">
+                        class="absolute top-full mt-2 opacity-0 group-hover:opacity-100 bg-honey-green text-honey-yellow text-xs px-2 py-1 rounded whitespace-nowrap transition-smooth transform group-hover:translate-y-0 -translate-y-1 pointer-events-none">
                         Home
                     </span>
                 </a>
+                <!-- About -->
                 <a href="/about.html" class="group relative flex flex-col items-center">
                     <div
-                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green group-hover:text-honey-yellow transition-colors">
-                        <i class="fas fa-info"></i>
+                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green transition-smooth">
+                        <i class="fas fa-info text-lg group-hover:text-honey-yellow"></i>
                     </div>
                     <span
-                        class="absolute top-full mt-2 hidden group-hover:block bg-honey-green text-[#fff4a4] text-xs px-2 py-1 rounded whitespace-nowrap">
+                        class="absolute top-full mt-2 opacity-0 group-hover:opacity-100 bg-honey-green text-honey-yellow text-xs px-2 py-1 rounded whitespace-nowrap transition-smooth transform group-hover:translate-y-0 -translate-y-1 pointer-events-none">
                         About
                     </span>
                 </a>
+                <!-- Services -->
                 <a href="/services.html" class="group relative flex flex-col items-center">
                     <div
-                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green group-hover:text-honey-yellow transition-colors">
-                        <i class="fas fa-cogs"></i>
+                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green transition-smooth">
+                        <i class="fas fa-cogs text-lg group-hover:text-honey-yellow"></i>
                     </div>
                     <span
-                        class="absolute top-full mt-2 hidden group-hover:block bg-honey-green text-[#fff4a4] text-xs px-2 py-1 rounded whitespace-nowrap">
+                        class="absolute top-full mt-2 opacity-0 group-hover:opacity-100 bg-honey-green text-honey-yellow text-xs px-2 py-1 rounded whitespace-nowrap transition-smooth transform group-hover:translate-y-0 -translate-y-1 pointer-events-none">
                         Services
                     </span>
                 </a>
+                <!-- Projects -->
                 <a href="/projects.html" class="group relative flex flex-col items-center">
                     <div
-                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green group-hover:text-honey-yellow transition-colors">
-                        <i class="fas fa-briefcase"></i>
+                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green transition-smooth">
+                        <i class="fas fa-briefcase text-lg group-hover:text-honey-yellow"></i>
                     </div>
                     <span
-                        class="absolute top-full mt-2 hidden group-hover:block bg-honey-green text-[#fff4a4] text-xs px-2 py-1 rounded whitespace-nowrap">
+                        class="absolute top-full mt-2 opacity-0 group-hover:opacity-100 bg-honey-green text-honey-yellow text-xs px-2 py-1 rounded whitespace-nowrap transition-smooth transform group-hover:translate-y-0 -translate-y-1 pointer-events-none">
                         Projects
                     </span>
                 </a>
+                <!-- Contact -->
                 <a href="/contact.html" class="group relative flex flex-col items-center">
                     <div
-                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green group-hover:text-honey-yellow transition-colors">
-                        <i class="fas fa-phone"></i>
+                        class="w-10 h-10 rounded-full border-2 border-honey-green flex items-center justify-center group-hover:bg-honey-green transition-smooth">
+                        <i class="fas fa-phone text-lg group-hover:text-honey-yellow"></i>
                     </div>
                     <span
-                        class="absolute top-full mt-2 hidden group-hover:block bg-honey-green text-[#fff4a4] text-xs px-2 py-1 rounded whitespace-nowrap">
+                        class="absolute top-full mt-2 opacity-0 group-hover:opacity-100 bg-honey-green text-honey-yellow text-xs px-2 py-1 rounded whitespace-nowrap transition-smooth transform group-hover:translate-y-0 -translate-y-1 pointer-events-none">
                         Contact
                     </span>
                 </a>
             </div>
-            <!-- Mobile Menu Button and Theme Toggle -->
+            <!-- Right Side - Theme Toggle and Mobile Menu Button -->
             <div class="flex items-center space-x-4">
                 <!-- Theme Toggle -->
-                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                <button id="theme-toggle"
+                    class="p-2 rounded-full focus:outline-none  hover:text-honey-yellow transition-smooth">
                     <i class="fas fa-moon text-honey-green text-xl"></i>
                 </button>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="sm:hidden p-2 rounded-full focus:outline-none">
+                <button id="mobile-menu-button"
+                    class="sm:hidden p-2 rounded-full focus:outline-none hover:text-honey-yellow transition-smooth">
                     <i class="fas fa-bars text-honey-green text-xl"></i>
                 </button>
             </div>
             <!-- Mobile Menu (Hidden by default) -->
             <div id="mobile-menu"
-                class="hidden absolute top-16 right-0 w-48 bg-honey-yellow rounded-lg shadow-xl p-4 z-50 border border-honey-green">
-                <button id="mobile-close-button" class="absolute top-2 right-2 text-honey-green text-xl">
-                    <i class="fas fa-times"></i>
+                class="hidden sm:hidden absolute top-full right-0 mt-2 w-56 bg-honey-yellow rounded-lg shadow-xl p-4 z-50 border-2 border-honey-green">
+                <button id="mobile-close-button"
+                    class="absolute top-2 right-2 p-1 text-honey-green hover:text-honey-yellow rounded-full hover:bg-honey-green">
+                    <i class="fas fa-times text-lg"></i>
                 </button>
-                <ul class="space-y-4">
+                <ul class="space-y-3">
                     <li>
-                        <a href="#"
-                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-colors">
+                        <a href="/index.html"
+                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-smooth">
                             <div
-                                class="w-8 h-8 rounded-full border border-honey-green flex items-center justify-center">
+                                class="w-8 h-8 rounded-full border-2 border-honey-green flex items-center justify-center">
                                 <i class="fas fa-home"></i>
                             </div>
-                            <span>Home</span>
+                            <span class="font-medium">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-colors">
+                        <a href="/about.html"
+                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-smooth">
                             <div
-                                class="w-8 h-8 rounded-full border border-honey-green flex items-center justify-center">
-                                <i class="fas fa-user"></i>
+                                class="w-8 h-8 rounded-full border-2 border-honey-green flex items-center justify-center">
+                                <i class="fas fa-info"></i>
                             </div>
-                            <span>About</span>
+                            <span class="font-medium">About</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-colors">
+                        <a href="/services.html"
+                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-smooth">
                             <div
-                                class="w-8 h-8 rounded-full border border-honey-green flex items-center justify-center">
+                                class="w-8 h-8 rounded-full border-2 border-honey-green flex items-center justify-center">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <span>Services</span>
+                            <span class="font-medium">Services</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-colors">
+                        <a href="/projects.html"
+                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-smooth">
                             <div
-                                class="w-8 h-8 rounded-full border border-honey-green flex items-center justify-center">
+                                class="w-8 h-8 rounded-full border-2 border-honey-green flex items-center justify-center">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <span>Portfolio</span>
+                            <span class="font-medium">Projects</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-colors">
+                        <a href="/contact.html"
+                            class="flex items-center space-x-3 text-honey-green hover:bg-honey-green hover:text-honey-yellow p-2 rounded transition-smooth">
                             <div
-                                class="w-8 h-8 rounded-full border border-honey-green flex items-center justify-center">
-                                <i class="fas fa-envelope"></i>
+                                class="w-8 h-8 rounded-full border-2 border-honey-green flex items-center justify-center">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            <span>Contact</span>
+                            <span class="font-medium">Contact</span>
                         </a>
                     </li>
                 </ul>
@@ -414,12 +444,11 @@
     <div class="flex justify-center p-5 gap-4">
         <a href="/index.html"
             class="text-2xl px-4 py-2 mx-1 text-[#fff4a4] transition-colors duration-300 transform bg-[#386641] rounded-full sm:inline dark:bg-[#386641] dark:text-[#fff4a4] hover:bg-[#fff4a4] dark:hover:bg-[#fff4a4] hover:text-[#386641] dark:hover:text-[#386641]">
-            <
-        </a>
-        <a href="/services.html"
-            class="text-2xl px-4 py-2 mx-1 text-[#fff4a4] transition-colors duration-300 transform bg-[#386641] rounded-full sm:inline dark:bg-[#386641] dark:text-[#fff4a4] hover:bg-[#fff4a4] dark:hover:bg-[#fff4a4] hover:text-[#386641] dark:hover:text-[#386641]">
-            >
-        </a>
+            < </a>
+                <a href="/services.html"
+                    class="text-2xl px-4 py-2 mx-1 text-[#fff4a4] transition-colors duration-300 transform bg-[#386641] rounded-full sm:inline dark:bg-[#386641] dark:text-[#fff4a4] hover:bg-[#fff4a4] dark:hover:bg-[#fff4a4] hover:text-[#386641] dark:hover:text-[#386641]">
+                    >
+                </a>
     </div>
     <!-- Pagination End -->
     <!-- Footer Start -->
