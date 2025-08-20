@@ -207,3 +207,55 @@ document.querySelectorAll("#addToCart").forEach((button) => {
     });
   });
 });
+
+// Toggle theme
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+
+  // Check for saved theme preference or use OS preference
+  const savedTheme = localStorage.getItem("theme");
+  const systemPrefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  // Set initial theme
+  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add("theme-dark");
+    document.body.classList.remove("theme-light");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    themeIcon.classList.remove("text-[#386641]");
+    themeIcon.classList.add("text-[#FFF4A4]");
+  } else {
+    document.body.classList.add("theme-light");
+    document.body.classList.remove("theme-dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    themeIcon.classList.remove("text-[#FFF4A4]");
+    themeIcon.classList.add("text-[#386641]");
+  }
+
+  // Toggle theme on button click
+  themeToggle.addEventListener("click", function () {
+    if (document.body.classList.contains("theme-light")) {
+      // Switch to dark theme
+      document.body.classList.remove("theme-light");
+      document.body.classList.add("theme-dark");
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+      themeIcon.classList.remove("text-[#386641]");
+      themeIcon.classList.add("text-[#FFF4A4]");
+      localStorage.setItem("theme", "dark");
+    } else {
+      // Switch to light theme
+      document.body.classList.remove("theme-dark");
+      document.body.classList.add("theme-light");
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+      themeIcon.classList.remove("text-[#FFF4A4]");
+      themeIcon.classList.add("text-[#386641]");
+      localStorage.setItem("theme", "light");
+    }
+  });
+});
