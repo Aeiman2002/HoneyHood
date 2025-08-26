@@ -1,35 +1,19 @@
 /* Fonts */
 @font-face {
   font-family: "CallingCode";
-  src: url(/Font/CallingCode-Regular.ttf);
+  src: url(/Font/Inter_18pt-Regular.ttf);
 }
 @font-face {
   font-family: "Liber";
   src: url(/Font/LibertinusSans-Regular.ttf);
 }
-:root {
-  --light-bg: #fff4a4;
-  --light-text: #2d3748;
-  --dark-bg: #386641;
-  --dark-text: #f7fafc;
-}
 
-
-.theme-light {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-}
-
-.theme-dark {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
 body p {
   font: "CallingCode", Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 body {
-  font-family: "Liber", Arial, Helvetica, sans-serif;
+  font-family: "CallingCode", Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .logo {
@@ -134,6 +118,9 @@ body {
 }
 .service-card {
   box-shadow: 0px 13px 24px -5px rgba(12, 105, 21, 0.75);
+}
+.form-validation{
+  height: 400px;
 }
 @media screen and (max-width: 768) {
   .beeImg img {

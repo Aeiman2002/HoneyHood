@@ -1,5 +1,4 @@
 // Mobile menu toggle functionality
-// JavaScript for mobile responsiveness
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileCloseButton = document.getElementById("mobile-close-button");
@@ -13,29 +12,31 @@ mobileCloseButton.addEventListener("click", () => {
 });
 // Slider
 const slider = document.getElementById("slider");
-const slides = slider.children;
-const totalSlides = slides.length;
-let index = 0;
+if (slider) {
+  const slides = slider.children;
+  const totalSlides = slides.length;
+  let index = 0;
 
-function showSlide(i) {
-  slider.style.transform = `translateX(-${i * 100}%)`;
+  function showSlide(i) {
+    slider.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  });
+
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide(index);
+  });
+
+  // Auto-play
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    showSlide(index);
+  }, 1000);
 }
-
-document.getElementById("next").addEventListener("click", () => {
-  index = (index + 1) % totalSlides;
-  showSlide(index);
-});
-
-document.getElementById("prev").addEventListener("click", () => {
-  index = (index - 1 + totalSlides) % totalSlides;
-  showSlide(index);
-});
-
-// Auto-play
-setInterval(() => {
-  index = (index + 1) % totalSlides;
-  showSlide(index);
-}, 2000);
 
 // Honey data
 const honeyProducts = {
@@ -209,54 +210,63 @@ document.querySelectorAll("#addToCart").forEach((button) => {
 });
 
 // Form Validation
-document.addEventListener("DOMContentLoaded" , () => {
-
-  const signupForm = document.getElementById("signupForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const submitForm = document.getElementById("submitForm");
   const userName = document.getElementById("name");
   const userEmail = document.getElementById("email");
-  const userPassword = document.getElementById("password");
-  
+  const messageBox = document.getElementById("messageBox");
   // Logic validation
-  signupForm.addEventListener("submit", (e) => {
+  submitForm.addEventListener("submit", (e) => {
     e.preventDefault();
-  
     // Check name validation
     if (userName.value.trim() === "") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Please Enter Your Name",
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "custom-confirm-button",
+        },
       });
       return;
     }
-  
     // Check email validation
     if (!userEmail.value.includes("@") || !userEmail.value.includes(".")) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Please Enter Your Email Address",
+        text: "Please Enter Your Correct Email Address",
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "custom-confirm-button",
+        },
       });
       return;
     }
-  
-    // Check password validation
-    if (userPassword.value.length < 6) {
+    if (messageBox.value.trim() === "") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Password Must be 6 Characters",
+        text: "Please Enter Your Message",
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "custom-confirm-button",
+        },
       });
       return;
     }
-  
     // If all validations pass
     Swal.fire({
       icon: "success",
       title: "Success!",
-      text: "Form submitted successfully",
+      text: "Message successfully send",
+      confirmButtonText: "OK",
+      customClass: {
+        confirmButton: "custom-confirm-button",
+      },
     }).then(() => {
-      signupForm.reset();
+      submitForm.reset();
     });
   });
-})
+});
