@@ -16,6 +16,10 @@ Built with a clean design, smooth animations, and fully responsive layout.
 
 ---
 
+**Hosted URL:**
+- https://honey-hood.vercel.app/
+
+---
 ## 📂 Project Structure
 HoneyHood/
 ├── index.html # Home page
